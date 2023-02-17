@@ -1,0 +1,19 @@
+name: 'teakong · 一封传话聚合推送'
+description: '一封传话是一个集成了微信、企业微信、钉钉、飞书、邮件、webhook等聚合消息推送平台。只需要调用简单的API，即可帮您迅速完成消息的推送。'
+author: 'teakong'
+branding:
+  icon: 'message-square'
+  color: 'blue'
+inputs:
+  channelCode:
+    required: true
+    description: 'channelCode 可在 push.phprm.com 首页使用微信扫码后查看'
+  head:
+    required: true
+    description: '消息标题'
+  body:
+    description: '消息内容，支持markdown'
+    
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

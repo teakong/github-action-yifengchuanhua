@@ -1,0 +1,21 @@
+name: 'build-test'
+on: # 该脚本仅用于一封传话聚合推送消息插件的版本更新自动测试, 请勿直接复制到你的项目, 具体使用请以README.md为准
+  push:
+    branches:
+      - main
+      - 'releases/*'
+
+jobs:
+  test: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: josStorer/get-current-time@v2.0.2
+        id: current-time
+        with:
+          format: YYYYMMDD-HH
+          utcOffset: "+08:00"
+      - uses: ./
+        with:
+          channelCode: ${{ secrets.channelCode }}
+          head: "一封传话聚合推送 Github Action更新啦 ${{ steps.current-time.outputs.formattedTime }}"
