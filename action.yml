@@ -1,4 +1,4 @@
-name: '一封传话-action'
+name: 'teakong · 一封传话聚合推送API'
 description: '一封传话是一个集成了微信、企业微信、钉钉、飞书、邮件、webhook等聚合消息推送平台。只需要调用简单的API，即可帮您迅速完成消息的推送。'
 author: 'teakong'
 branding:
